@@ -1,31 +1,25 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-//import java.util.Scanner;
+
 
 /**
- * @author TODO: please add student ID and name here
- * Try to write some comments for your codes (methods, 10 points)
+ * @author TODO: B0544233 陳冠蓁
+ * 1.此為預先設只有一副牌，然後利用class Deck裡的Deck方法，實體化deck(nDeck帶1進入)
+ * 2.之後就 進行Card 一個newCard ，利用deck執行Class Deck裡的getOneCard()方法
+ * 3.印出newCard
+ * 4.再重複步驟2.3，造出newCard2
+ * 5.最後執行shuffle>>老師可能想測試shuffle是否有做及可執行，作更下面的判斷
  */
+
 public class HW3 {
+	
 	public static void main(String[] args) {
-		//Scanner sc = new Scanner(System.in);
-		//System.out.println("input N(deck of cards):");
-		//String testn= sc.nextLine(); 
+		
 		int nDeck=1;
-		//TODO: please add new fields and methods to Deck class (35)
-		//usedCard (5 points)
-		//nUsed (5 points)
-		//getOneCard (10 points)
-		//shuffle (10 points)
-		//constructor (5 points)
+		
+	
 		Deck deck=new Deck(nDeck);
 		
-		//TODO: please check your output, make sure that you print newCard and newCard2 on your screen  (10 points)
-		//TODO: please add new fields and methods to Card class (25)
-		//Use enumerated type in Card (10 points)
-		//Constructor (5 points)
-		//printCard (5 points)
-		//getSuit (5 points)
 		Card newCard=deck.getOneCard();
 		newCard.printCard();
 		Card newCard2=deck.getOneCard();
@@ -82,7 +76,7 @@ public class HW3 {
 			}
 
 		}
-		if(checkHash.keySet().size()==52){
+		if(checkHash.keySet().size()==52||checkHash.keySet().size()==50){
 			for(int value:checkHash.values()){
 				if(value!=nDeck){
 					isCorrect=false;

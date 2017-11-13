@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * @author TODO: B0544233 陳冠蓁
  * 1.此為預先設只有一副牌，然後利用class Deck裡的Deck方法，實體化deck(nDeck帶1進入)
- * 2.之後就 進行Card 一個newCard ，利用deck執行Class Deck裡的getOneCard()方法
+ * 2.之後就 進行做一個newCard ，利用deck執行Class Deck裡的getOneCard()方法
  * 3.印出newCard
  * 4.再重複步驟2.3，造出newCard2
  * 5.最後執行shuffle>>老師可能想測試shuffle是否有做及可執行，作更下面的判斷
@@ -15,16 +15,16 @@ public class HW3 {
 	
 	public static void main(String[] args) {
 		
-		int nDeck=1;
+		int nDeck=1;//1.
 		
 	
 		Deck deck=new Deck(nDeck);
 		
-		Card newCard=deck.getOneCard();
-		newCard.printCard();
-		Card newCard2=deck.getOneCard();
-		newCard2.printCard();
-		deck.shuffle();
+		Card newCard=deck.getOneCard();  //2.
+		newCard.printCard();   //3.
+		Card newCard2=deck.getOneCard();//4.
+		newCard2.printCard();//4.
+		deck.shuffle();//5.
 		if(isAllCardsCorrect(deck.getAllCards(),nDeck)){
 			if(!isShuffleWorking(deck,newCard,newCard2)){
 				System.out.println("All Card: Well done! But shufller is not working");

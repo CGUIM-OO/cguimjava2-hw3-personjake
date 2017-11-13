@@ -4,14 +4,13 @@ public class Card {
 	private Suit suit;
 	enum Suit {
 		Club, Diamand, Heart, Spade
-	};
+	};//為花色 
 	
 	private int rank; // 1~13
 
 //印出一張卡的花色和值(依照有特別號碼的(AJQK))
 	public void printCard() {
-		// Hint: print (System.out.println) card as suit,rank, for example:
-		// print 1,1 as Clubs Ace
+		
 		if (rank == 1) {
 			System.out.println(suit + "," + "A");
 		} else if (rank == 11) {
@@ -25,7 +24,7 @@ public class Card {
 		}
 	}
 
-	//s改成Suit
+	//s的型態改成Suit
 	public Card(Suit s, int r) {
 		suit = s;
 		rank = r;

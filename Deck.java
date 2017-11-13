@@ -1,11 +1,8 @@
 import java.util.ArrayList;
 import java.util.Random;
-/**
- * Description:
- * 1.Deck方法中建立一個ArrayList-cards和usedCard 前者做製作排所要塞入的arrayList,後者放getoneCard後的牌
- * 2.int nUsed作為計算抽掉了幾張牌
- * 3.
- */
+//cards(ArrayList)為做製作排所要塞入的arrayList
+//usedCard(ArrayList) 放getoneCard後的牌
+//nUsed作為計算抽掉了幾張牌
 public class Deck {
 	private ArrayList<Card> cards;
 	public ArrayList<Card> usedCard ;
@@ -32,7 +29,7 @@ public class Deck {
 	}}
 
 	
-	//此方法尚未在此次作業用到，不過printDeck方法是將 Arraylist-cards 利用 Enhanced for Loop 印出值來 (Class Card裡面的printCard)
+	//此方法尚未在此次作業用到，不過printDeck方法是將 cards(Arraylist) 利用 Enhanced for Loop 印出值來 (Class Card裡面的printCard)
 	public void printDeck() {
 
 		for (Card allcards : cards) {
@@ -41,12 +38,12 @@ public class Deck {
 
 	}
 	
-     //此方法尚未在此次作業用到，但getAllCards方法為回傳 Arraylist-cards
+     //此方法尚未在此次作業用到，但getAllCards方法為回傳cards(Arraylist)
 	public ArrayList<Card> getAllCards() {
 		return cards;
 	}
 
-	//1.getOneCard方法是 先設一個 a 到時候 要放入 從Arraylist cards裡放值
+	//1.getOneCard方法是 先設一個 a 到時候 要放入 從cards(Arraylist)裡放值
 	//2. 如果整個cards(ArrayList)是空的，就會先執行shuffle的方法，再執行 抽取cards的第一張牌，放入一個變數a，並將此排丟入usedCard裡，並移除cards的第一張牌，useCard++表示執行過一次
 	//3. 若不是空的就會執行:抽取cards的第一張牌，放入一個變數a，並將此排丟入usedCard裡，並移除cards的第一張牌，useCard++表示執行過一次
 	//最後 回傳a 值，回傳資料型態為Card
@@ -71,8 +68,8 @@ public class Deck {
 
 	//先實體化亂數產生方法，並將usedCard-ArrayList裡的卡全部加入cards-ArrayList裡
 	//做一個for迴圈 從0開始到整個cards-ArrayList的範圍前(0<=i<cards.size())
-	//迴圈內容:  Card 一個變數a為照順序的第i個，再設一個暫存變數temp為a; 在利用 rnd.nextInt(cards.size())把j設為0<=i<cards.size()的數，
-	//			Card 一個變數b 取在cards 裡第j的位置，  最後將第i個位置取到為b；第j位置取代為暫存函數(原先第i個位置的卡)
+	//迴圈內容:  設一個變數a為照順序的第i個，再設一個暫存變數temp為a; 在利用 rnd.nextInt(cards.size())把j設為介於(0<=j<cards.size())的1個數，
+	//			設一個變數b 取在cards 裡第j的位置，  最後將第i個位置取到為b；第j位置取代為暫存函數(原先第i個位置的卡)
 	//  最後清掉所有在usedCard-ArrayList裡的卡,將nUsed重置為0
 	public void shuffle() {
 
